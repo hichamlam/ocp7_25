@@ -1,15 +1,23 @@
-# Ignorer les artefacts MLflow
+# Ne pas versionner les dossiers MLflow
 mlruns/
 
-# Ignorer les modèles sauvegardés
-*.pkl
 
-# Fichiers Python compilés
+
+# Ne pas versionner les checkpoints Jupyter
+**/.ipynb_checkpoints/
+
+# Ne pas versionner les fichiers compilés Python
 __pycache__/
-*.pyc
+src/__pycache__/
 
-# Fichiers macOS inutiles
+# Ne pas versionner les fichiers Mac OS
 .DS_Store
+src/.DS_Store
+notebooks/.DS_Store
 
-# Checkpoints Jupyter
-.ipynb_checkpoints/
+# Résultats ou prédictions
+predictions.csv
+
+# Ne pas versionner les artefacts d’API tests ou autres
+
+*.log
