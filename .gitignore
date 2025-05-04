@@ -1,0 +1,15 @@
+# Ignorer les artefacts MLflow
+mlruns/
+
+# Ignorer les modèles sauvegardés
+*.pkl
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Fichiers macOS inutiles
+.DS_Store
+
+# Checkpoints Jupyter
+.ipynb_checkpoints/

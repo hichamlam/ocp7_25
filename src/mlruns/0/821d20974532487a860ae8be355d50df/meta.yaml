@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hicham/Desktop/OCP7_25/src/mlruns/0/821d20974532487a860ae8be355d50df/artifacts
+end_time: 1745524971618
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 821d20974532487a860ae8be355d50df
+run_name: RandomForest_pipeline
+run_uuid: 821d20974532487a860ae8be355d50df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745524080551
+status: 3
+tags: []
+user_id: hicham

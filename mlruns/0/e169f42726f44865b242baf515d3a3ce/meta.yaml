@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hicham/Desktop/OCP7_25/mlruns/0/e169f42726f44865b242baf515d3a3ce/artifacts
+end_time: 1744724577545
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e169f42726f44865b242baf515d3a3ce
+run_name: RandomForest_smote
+run_uuid: e169f42726f44865b242baf515d3a3ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744724530320
+status: 3
+tags: []
+user_id: hicham

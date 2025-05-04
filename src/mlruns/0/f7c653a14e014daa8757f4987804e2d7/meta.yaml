@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hicham/Desktop/OCP7_25/src/mlruns/0/f7c653a14e014daa8757f4987804e2d7/artifacts
+end_time: 1745525466913
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f7c653a14e014daa8757f4987804e2d7
+run_name: LightGBM_pipeline
+run_uuid: f7c653a14e014daa8757f4987804e2d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745525239944
+status: 3
+tags: []
+user_id: hicham

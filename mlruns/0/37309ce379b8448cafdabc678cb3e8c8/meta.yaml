@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hicham/Desktop/OCP7_25/mlruns/0/37309ce379b8448cafdabc678cb3e8c8/artifacts
+end_time: 1744724344651
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 37309ce379b8448cafdabc678cb3e8c8
+run_name: XGBoost_smote
+run_uuid: 37309ce379b8448cafdabc678cb3e8c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744724331558
+status: 3
+tags: []
+user_id: hicham

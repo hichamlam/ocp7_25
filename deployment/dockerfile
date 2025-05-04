@@ -1,0 +1,19 @@
+# Dockerfile
+
+# Utiliser une image Python officielle
+FROM python:3.11-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier le contenu local vers l'image
+COPY . /app
+
+# Installer les dépendances
+RUN pip install flask joblib scikit-learn numpy
+
+# Exposer le port de l'API
+EXPOSE 5000
+
+# Lancer l'API Flask
+CMD ["python", "api_flask.py"]
