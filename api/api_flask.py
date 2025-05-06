@@ -4,6 +4,19 @@ import pandas as pd
 
 app = Flask(__name__)
 
+
+# 📁 Chemin du modèle local
+model_path = "best_model.pkl"
+
+# 📥 ID Google Drive (extrait de ton lien Drive)
+gdrive_file_id = "1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp"
+
+# ✅ Télécharger le modèle si non présent
+if not os.path.exists(model_path):
+    print("📥 Téléchargement du modèle depuis Google Drive...")
+    url = f"https://drive.google.com/file/d/1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp/view?usp=drive_link"
+    gdown.download(url, model_path, quiet=False)
+
 # 📦 Chargement du modèle entraîné et des colonnes d'entraînement
 model, model_columns = joblib.load("best_model.pkl")
 

@@ -1,23 +1,69 @@
-# Ne pas versionner les dossiers MLflow
+# === Dossiers MLflow ===
 mlruns/
 
-
-
-# Ne pas versionner les checkpoints Jupyter
+# === Checkpoints Jupyter ===
 **/.ipynb_checkpoints/
 
-# Ne pas versionner les fichiers compilés Python
+# === Fichiers compilés Python ===
 __pycache__/
 src/__pycache__/
+*.pyc
 
-# Ne pas versionner les fichiers Mac OS
+# === Fichiers MacOS ===
 .DS_Store
 src/.DS_Store
 notebooks/.DS_Store
 
-# Résultats ou prédictions
+# === Résultats ou prédictions ===
 predictions.csv
 
-# Ne pas versionner les artefacts d’API tests ou autres
-
+# === Logs ===
 *.log
+
+# === Fichiers de modèles ===
+src/models/*.pkl
+*.pkl
+
+# === Fichiers de datasets ===
+data/
+*.csv
+*.tsv
+*.xlsx
+
+# === Fichiers d'environnement ou configurations locales ===
+.env
+*.env
+
+# === Artifacts divers ===
+artifacts/
+outputs/
+results/
+
+# === IDE configs (optionnel, VSCode/JetBrains/etc) ===
+.vscode/
+.idea/
+
+# === Extensions Windows ===
+Thumbs.db
+ehthumbs.db
+
+# === Autres fichiers temporaires ===
+*.bak
+*.tmp
+*.swp
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Notebooks convertis
+*.html
+
+data/bureau.csv
+data/processed/train_clean.csv
+data/previous_application.csv
+data/POS_CASH_balance.csv
+data/credit_card_balance.csv
+dashboard/data/test_split.csv
+

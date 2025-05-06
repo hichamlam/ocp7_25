@@ -4,6 +4,8 @@ import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import gdown
+import os
 
 # === Conversion JSON-safe des features ===
 def clean_feature(x):
@@ -19,13 +21,23 @@ def clean_feature(x):
 st.set_page_config(page_title="Scoring Crédit Interactif", layout="wide")
 st.title("💳 Dashboard de scoring client")
 
-# === CHARGEMENT DES DONNÉES ===
+
+
+# 📁 Chemin local du dataset
+data_path = "test_split.csv"
+
+# 📥 ID Google Drive (extrait de ton lien Drive)
+gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
+
+# ✅ Télécharger le dataset si absent
+if not os.path.exists(data_path):
+    st.info("📥 Téléchargement du dataset depuis Google Drive...")
+    url = f"https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
+    gdown.download(url, data_path, quiet=False)
+
 @st.cache_data
 def load_data():
-    #df = pd.read_csv("../data/processed/test_split.csv")
-    df = pd.read_csv("data/test_split.csv")
-    return df
-
+    df = pd.read_csv(data_path)
     return df
 
 df = load_data()
@@ -128,3 +140,7 @@ if (var_x := st.sidebar.selectbox("Variable X :", ["-- Aucune --"] + all_vars)) 
         st.pyplot(fig_bi)
     else:
         st.info("ℹ️ Sélectionnez deux variables pour afficher une analyse croisée.")
+
+
+
+
