@@ -7,4 +7,6 @@ seaborn==0.13.2
 gdown
 joblib
 scikit-learn
+Flask
+gunicorn
 
