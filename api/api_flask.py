@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
-import os
-
 
 app = Flask(__name__)
 
@@ -16,7 +14,7 @@ gdrive_file_id = "1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp"
 # ✅ Télécharger le modèle si non présent
 if not os.path.exists(model_path):
     print("📥 Téléchargement du modèle depuis Google Drive...")
-    url = f"https://drive.google.com/file/d/1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp/view?usp=drive_link"
+    url = f"https://drive.google.com/file/d/1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp"
     gdown.download(url, model_path, quiet=False)
 
 # 📦 Chargement du modèle entraîné et des colonnes d'entraînement

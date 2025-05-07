@@ -28,13 +28,10 @@ data_url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
 @st.cache_data
 def load_data():
-    st.info("📥 Chargement du dataset depuis Google Drive...")
     df = pd.read_csv(data_url)
-    st.success("✅ Dataset chargé !")
     return df
 
 df = load_data()
-st.write("✅ Colonnes trouvées :", df.columns.tolist())
 
 
 if "TARGET" in df.columns:
@@ -73,7 +70,7 @@ if st.button("Obtenir la prédiction du mohttpsdèle"):
         row = client_data.iloc[0]
         input_features = [clean_feature(x) for x in row]
 
-        api_url = "http://127.0.0.1:5000/predict"
+        api_url = "https://ocp7-25.onrender.com/predict"
         with st.spinner("⏳ Prédiction en cours..."):
             response = requests.post(api_url, json={"features": input_features})
 
