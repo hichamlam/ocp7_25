@@ -32,7 +32,7 @@ gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 # ✅ Télécharger le dataset si absent
 if not os.path.exists(data_path):
     st.info("📥 Téléchargement du dataset depuis Google Drive...")
-    url = f"https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
+    url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
     gdown.download(url, data_path, quiet=False)
 
 @st.cache_data
@@ -41,12 +41,13 @@ def load_data():
     return df
 
 df = load_data()
-st.write("✅ Colonnes trouvées :", df.columns.tolist())
+#st.write("✅ Colonnes trouvées :", df.columns.tolist())
 
 if "TARGET" in df.columns:
     df_features = df.drop(columns=["TARGET"])
 else:
     df_features = df
+
 all_vars = df_features.select_dtypes(include="number").columns.tolist()
 
 # === BARRE LATÉRALE ===
