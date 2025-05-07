@@ -41,7 +41,7 @@ def load_data():
     return df
 
 df = load_data()
-#st.write("✅ Colonnes trouvées :", df.columns.tolist())
+st.write("✅ Colonnes trouvées :", df.columns.tolist())
 
 if "TARGET" in df.columns:
     df_features = df.drop(columns=["TARGET"])
