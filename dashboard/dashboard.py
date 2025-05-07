@@ -30,7 +30,7 @@ data_path = "test_split.csv"
 gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
 # 📥 Lien direct Google Drive (en mode 'uc?export=download')
-url = "https://drive.google.com/uc?export=download&id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
+url = "https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
 
 if not os.path.exists(data_path):
     st.info("📥 Téléchargement du dataset depuis Google Drive...")
