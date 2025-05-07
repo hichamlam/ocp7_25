@@ -41,7 +41,11 @@ def load_data():
     return df
 
 df = load_data()
-df_features = df.drop(columns=["TARGET"])
+
+if "TARGET" in df.columns:
+    df_features = df.drop(columns=["TARGET"])
+else:
+    df_features = df
 all_vars = df_features.select_dtypes(include="number").columns.tolist()
 
 # === BARRE LATÉRALE ===
