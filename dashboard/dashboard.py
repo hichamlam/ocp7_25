@@ -25,7 +25,7 @@ st.title("💳 Dashboard de scoring client")
 
 # 📁 Chemin local du dataset
 data_path = "https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
-
+df=read_csv(data_path)
 
 # 📥 ID Google Drive (extrait de ton lien Drive)
 gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
@@ -33,7 +33,7 @@ gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
 if not os.path.exists(data_path):
     st.info("📥 Téléchargement du dataset depuis Google Drive...")
-    response = requests.get(data_path)
+    response = requests.get("https://drive.google.com/drive/folders/1dLra7jqtk2-Etkv1KMLyAhG0mY-aRPcm?usp=drive_link")
     with open(data_path, 'wb') as f:
         f.write(response.content)
     st.success("✅ Dataset téléchargé !")
