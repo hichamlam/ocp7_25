@@ -6,6 +6,8 @@ import seaborn as sns
 import numpy as np
 import gdown
 import os
+import requests
+
 
 # === Conversion JSON-safe des features ===
 def clean_feature(x):
@@ -21,19 +23,29 @@ def clean_feature(x):
 st.set_page_config(page_title="Scoring Crédit Interactif", layout="wide")
 st.title("💳 Dashboard de scoring client")
 
-
-
 # 📁 Chemin local du dataset
 data_path = "test_split.csv"
 
 # 📥 ID Google Drive (extrait de ton lien Drive)
 gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
-# ✅ Télécharger le dataset si absent
+# 📥 Lien direct Google Drive (en mode 'uc?export=download')
+url = "https://drive.google.com/uc?export=download&id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
+
 if not os.path.exists(data_path):
     st.info("📥 Téléchargement du dataset depuis Google Drive...")
-    url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
-    gdown.download(url, data_path, quiet=False)
+    response = requests.get(url)
+    with open(data_path, 'wb') as f:
+        f.write(response.content)
+    st.success("✅ Dataset téléchargé !")
+
+
+
+# ✅ Télécharger le dataset si absent
+#if not os.path.exists(data_path):
+#    st.info("📥 Téléchargement du dataset depuis Google Drive...")
+#    url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
+#    gdown.download(url, data_path, quiet=False)
 
 
 @st.cache_data
