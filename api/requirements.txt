@@ -8,3 +8,5 @@ gdown
 numpy
 Flask
 gunicorn
+lightgbm
+
