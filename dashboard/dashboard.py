@@ -24,13 +24,12 @@ st.set_page_config(page_title="Scoring Crédit Interactif", layout="wide")
 st.title("💳 Dashboard de scoring client")
 
 # 📁 Chemin local du dataset
-data_path = "test_split.csv"
+data_path = "https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
+
 
 # 📥 ID Google Drive (extrait de ton lien Drive)
 gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
-# 📥 Lien direct Google Drive (en mode 'uc?export=download')
-url = "https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
 
 if not os.path.exists(data_path):
     st.info("📥 Téléchargement du dataset depuis Google Drive...")
@@ -39,11 +38,11 @@ if not os.path.exists(data_path):
         f.write(response.content)
     st.success("✅ Dataset téléchargé !")
 
-if os.path.exists(data_path):
-    st.write(f"✅ Taille du fichier téléchargé : {os.path.getsize(data_path)} octets")
-    with open(data_path, 'r', encoding='utf-8', errors='ignore') as f:
-        first_lines = ''.join([next(f) for _ in range(5)])
-    st.code(first_lines)
+#if os.path.exists(data_path):
+#    st.write(f"✅ Taille du fichier téléchargé : {os.path.getsize(data_path)} octets")
+#    with open(data_path, 'r', encoding='utf-8', errors='ignore') as f:
+#        first_lines = ''.join([next(f) for _ in range(5)])
+#    st.code(first_lines)
 
 
 
