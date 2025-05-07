@@ -72,7 +72,7 @@ st.dataframe(client_data.T)
 # === PRÉDICTION API ===
 st.subheader("📤 Prédiction du modèle (via API Flask)")
 
-if st.button("Obtenir la prédiction du modèle"):
+if st.button("Obtenir la prédiction du mohttpsdèle"):
     try:
         row = client_data.iloc[0]
         input_features = [clean_feature(x) for x in row]
