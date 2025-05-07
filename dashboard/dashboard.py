@@ -35,6 +35,7 @@ if not os.path.exists(data_path):
     url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
     gdown.download(url, data_path, quiet=False)
 
+
 @st.cache_data
 def load_data():
     df = pd.read_csv(data_path)
