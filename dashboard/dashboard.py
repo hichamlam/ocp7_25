@@ -39,6 +39,12 @@ if not os.path.exists(data_path):
         f.write(response.content)
     st.success("✅ Dataset téléchargé !")
 
+if os.path.exists(data_path):
+    st.write(f"✅ Taille du fichier téléchargé : {os.path.getsize(data_path)} octets")
+    with open(data_path, 'r', encoding='utf-8', errors='ignore') as f:
+        first_lines = ''.join([next(f) for _ in range(5)])
+    st.code(first_lines)
+
 
 
 # ✅ Télécharger le dataset si absent
