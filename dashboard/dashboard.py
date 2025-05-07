@@ -23,43 +23,19 @@ def clean_feature(x):
 st.set_page_config(page_title="Scoring Crédit Interactif", layout="wide")
 st.title("💳 Dashboard de scoring client")
 
-# 📁 Chemin local du dataset
-data_path = "https://drive.google.com/file/d/1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k/view?usp=drive_link"
-df=read_csv(data_path)
-
-# 📥 ID Google Drive (extrait de ton lien Drive)
-gdrive_file_id = "1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
-
-
-if not os.path.exists(data_path):
-    st.info("📥 Téléchargement du dataset depuis Google Drive...")
-    response = requests.get("https://drive.google.com/drive/folders/1dLra7jqtk2-Etkv1KMLyAhG0mY-aRPcm?usp=drive_link")
-    with open(data_path, 'wb') as f:
-        f.write(response.content)
-    st.success("✅ Dataset téléchargé !")
-
-#if os.path.exists(data_path):
-#    st.write(f"✅ Taille du fichier téléchargé : {os.path.getsize(data_path)} octets")
-#    with open(data_path, 'r', encoding='utf-8', errors='ignore') as f:
-#        first_lines = ''.join([next(f) for _ in range(5)])
-#    st.code(first_lines)
-
-
-
-# ✅ Télécharger le dataset si absent
-#if not os.path.exists(data_path):
-#    st.info("📥 Téléchargement du dataset depuis Google Drive...")
-#    url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
-#    gdown.download(url, data_path, quiet=False)
-
+# === URL Google Drive direct (transformée en "uc?export=download")
+data_url = "https://drive.google.com/uc?id=1DgXIYKQfbwIS3zNdVbR7nJcOWsazvS3k"
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(data_path)
+    st.info("📥 Chargement du dataset depuis Google Drive...")
+    df = pd.read_csv(data_url)
+    st.success("✅ Dataset chargé !")
     return df
 
 df = load_data()
 st.write("✅ Colonnes trouvées :", df.columns.tolist())
+
 
 if "TARGET" in df.columns:
     df_features = df.drop(columns=["TARGET"])
