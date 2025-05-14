@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+import os
+
 
 app = Flask(__name__)
 
@@ -8,8 +10,6 @@ app = Flask(__name__)
 # 📁 Chemin du modèle local
 model_path = "best_model.pkl"
 
-# 📥 ID Google Drive (extrait de ton lien Drive)
-gdrive_file_id = "1Fu21aQVEaNMOJxLoM0yDCFZpEYZTCzXp"
 
 # ✅ Télécharger le modèle si non présent
 if not os.path.exists(model_path):
