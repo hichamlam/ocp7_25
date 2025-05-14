@@ -189,7 +189,7 @@ libarchive-c @ file:///tmp/build/80754af9/python-libarchive-c_1617780486945/work
 libmambapy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_69t7vyvo1k/croot/mamba-split_1704219411138/work/libmambapy
 lightgbm==4.6.0
 linkify-it-py @ file:///Users/cbousseau/work/recipes/ci_py311/linkify-it-py_1677973036983/work
-litestar==2.7.1
+litestar==2.13.0
 llvmlite @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a1dv4fk0r3/croot/llvmlite_1706910711755/work
 lmdb @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_6fumkuh_c0/croot/python-lmdb_1682522347231/work
 locket @ file:///Users/cbousseau/work/recipes/ci_py311/locket_1677925419801/work
@@ -369,7 +369,7 @@ sqlparse==0.5.3
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 starlette==0.41.3
 statsmodels @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d39rlzrllo/croot/statsmodels_1689937269798/work
-streamlit==1.32.2
+streamlit==1.37.0
 sympy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_7cbpg8656h/croot/sympy_1701397648473/work
 tables @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b2h37objh4/croot/pytables_1705614846524/work
 tabulate @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a301xhcsz1/croot/tabulate_1701354815389/work
