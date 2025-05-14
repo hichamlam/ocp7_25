@@ -45,7 +45,8 @@ all_vars = df_features.select_dtypes(include="number").columns.tolist()
 st.sidebar.header("🔎 Sélection du client")
 client_id = st.sidebar.selectbox("Choisir un client :", df["SK_ID_CURR"])
 
-st.sidebar.markdown("## 🎚️ Seuil de décision")
+st.sidebar.markdown("## Seuil de décision")
+st.caption("💡 Seuil recommandé : 0.10 ")
 threshold = st.sidebar.slider(
     "Choisir le seuil de probabilité de défaut pour refuser le crédit :",
     min_value=0.0,
@@ -53,6 +54,8 @@ threshold = st.sidebar.slider(
     value=0.10,
     step=0.01
 )
+
+
 
 # ✅ Au lieu de supprimer TARGET, on le garde et on force sa valeur à 0
 client_data = df[df["SK_ID_CURR"] == client_id].drop(columns=["SK_ID_CURR"])
@@ -76,11 +79,16 @@ if st.button("Obtenir la prédiction du mohttpsdèle"):
 
         if response.status_code == 200:
             result = response.json()
+            st.success("🛰️ Prédiction API reçue avec succès")
+
 
             if "proba" in result:
                 proba = result["proba"]
+                if abs(proba - threshold) < 0.05:
+                     st.warning("⚠️ Probabilité proche du seuil : décision limite.")
 
                 st.markdown("## 🎯 Résultat de la prédiction")
+                st.caption(f"⚙️ Seuil de décision utilisé : {threshold:.2f}")
                 st.markdown(
                     f"<h2 style='text-align: center;'>📊 Probabilité de défaut : "
                     f"<span style='color:#e74c3c;'>{proba:.2%}</span></h2>",
