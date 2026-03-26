@@ -102,7 +102,7 @@ dnspython==2.7.0
 docker==7.1.0
 docstring-to-markdown @ file:///Users/cbousseau/work/recipes/ci_py311/docstring-to-markdown_1677931891483/work
 docutils @ file:///Users/cbousseau/work/recipes/ci_py311/docutils_1677907269557/work
-dynaconf==3.2.5
+dynaconf==3.2.13
 email_validator==2.2.0
 entrypoints @ file:///Users/cbousseau/work/recipes/ci_py311/entrypoints_1677911798787/work
 et-xmlfile==1.1.0
@@ -206,7 +206,7 @@ mdit-py-plugins @ file:///Users/cbousseau/work/recipes/ci_py311/mdit-py-plugins_
 mdurl @ file:///Users/cbousseau/work/recipes/ci_py311/mdurl_1677942260967/work
 menuinst @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_26a7xsau78/croot/menuinst_1706732941263/work
 mistune @ file:///Users/cbousseau/work/recipes/ci_py311/mistune_1677916600725/work
-mlflow==2.21.3
+mlflow==3.9.0rc0
 mlflow-skinny==2.21.3
 more-itertools @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_e2687gwsdv/croot/more-itertools_1700662157766/work
 mpmath @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_17iu6a8a3m/croot/mpmath_1690848269369/work
